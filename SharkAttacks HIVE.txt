@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS SharkAttacks;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS SharkAttacks(
+CaseNumber STRING,
+`Date` STRING,
+Year STRING,
+Type STRING,
+Country STRING,
+Area STRING,
+Location STRING,
+Activity STRING,
+Name STRING,
+Sex STRING,
+Age STRING,
+Injury STRING,
+Fatal STRING,
+Time STRING,
+Species STRING,
+Investigator STRING) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE LOCATION '/user/jguan9/globalsharkattacks'
+TBLPROPERTIES ('skip.header.line.count'='1');
+
+Select * From Sharkattacks limit 10;
